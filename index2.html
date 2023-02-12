@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <button type="button" class="btn btn-primary position-relative m-5">
+            <div  id="clk"></div>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              Time
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+        
+    </center>
+
+<script>
+  function tm() {
+    var date = new Date();
+    var hour = date.getHours();
+    var minute= date.getMinutes();
+    var second = date.getSeconds();
+
+    hour = (hour < 10) ? "0" + hour : hour;
+    minute = (minute < 10) ? "0" + minute : minute;
+    second = (second < 10) ? "0" + second : second;
+
+    var time = hour + ":" + minute + ":" + second;
+    document.getElementById("clk").innerText = time;
+  }
+
+  tm();
+  setInterval(tm, 1000);
+</script>
+
+</body>
+</html>
